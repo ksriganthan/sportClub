@@ -1,6 +1,5 @@
 package org.fhnw.sport.sportclub.PlayerSkill;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.fhnw.sport.sportclub.Player.Player;
@@ -11,6 +10,7 @@ public class PlayerSkill {
     @EmbeddedId
     @Column(name = "Key")
     private PlayerSkillKey key; //alles muss lowercase sein
+
     @Column(name = "Skill Level")
     private Integer skillLevel;
 

@@ -1,6 +1,5 @@
 package org.fhnw.sport.sportclub.Coach;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -13,7 +12,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "coachID") // für n:m
+@Table(name = "Coach")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "coachID") // Nach 1. Serialisierung wird nur noch die ID angezeigt
 public class Coach {
     @Id
     @GeneratedValue

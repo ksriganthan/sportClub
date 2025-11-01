@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table(name = "Player")
 public class Player {
     @Id
     @GeneratedValue
@@ -28,7 +29,7 @@ public class Player {
     @JsonBackReference
     private Coach coach;
 
-    @OneToMany(mappedBy = "player",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "player", fetch = FetchType.EAGER, cascade = CascadeType.ALL,orphanRemoval = true)
     @JsonManagedReference
     private List<PlayerSkill> skills = new ArrayList<>();
 
